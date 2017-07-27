@@ -1,2 +1,8 @@
-Dear Teacher,
-Please review the task kindly in my Git url. Thanks in advance.
+项目名称：
+《欧洲冠军联赛历史总射手榜查询系统》
+
+项目介绍：
+通过本系统可以查询欧冠历史上那些伟大球星们的信息和数据，为广大足球迷提供专业的福利。
+
+作者：
+Ricky

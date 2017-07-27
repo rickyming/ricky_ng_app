@@ -6,26 +6,24 @@
 <table>
   <tbody>
     <tr>
-      <th>ID </th>
-      <th>姓名 </th>
-      <th>性别 </th>
-      <th>Name </th>
-      <th>github </th>
-      <th>exam1 </th>
-      <th>exam2 </th>
-      <th>exam3 </th>
+      <th>rank </th>
+      <th>name </th>
+      <th>nationality </th>
+      <th>goal </th>
+      <th>match</th>
+      <th>club </th>
+      <th>title </th>
     </tr>
   </tbody>
   <tbody>
     <tr *ngFor="let user of users">
-      <td>{{user.index}}</td>
+      <td>{{user.rank}}</td>
       <td>{{user.name}}</td>
-      <td>{{user.sex}}</td>
-      <td>{{user.name_en}} </td>
-      <td><a target="_blank" href="http://github.com/{{user.github}}">{{user.github}}</a></td>
-      <td>{{user.exam1}}</td>
-      <td>{{user.exam2}}</td>
-      <td>{{user.exam3}}</td>
+      <td>{{user.nationality}}</td>
+      <td>{{user.goal}} </td>
+      <td>{{user.match}}</td>
+      <td>{{user.club}}</td>
+      <td>{{user.title}}</td>
     </tr>
   </tbody>
 </table>

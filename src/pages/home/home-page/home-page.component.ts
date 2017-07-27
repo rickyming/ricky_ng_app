@@ -8,54 +8,64 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class HomePageComponent implements OnInit {
   users:Array<any> = [
-    {"index":19,
-    "name":"刘雨飏",
-      "sex":"Male",
-      "name_en":"Ryane",
-      "github":"ryanemax",
-      "exam1":66,
-      "exam2":66,
-      "exam3":66},
-      {"index":7,
-      "name":"小明",
-      "sex":"Male",
-      "name_en":"Ryane",
-      "github":"ryanemax",
-      "exam1":66,
-      "exam2":66,
-      "exam3":66},
-      {"index":14,
-      "name":"Chunk",
-      "sex":"Male",
-      "name_en":"Chunk",
-      "github":"chunk",
-      "exam1":76,
-      "exam2":76,
-      "exam3":76}
+    {"rank":1,
+    "name":"C.罗纳尔多",
+      "nationality":"葡萄牙",
+      "goal":105,
+      "match":140,
+      "club":"曼联/皇马",
+      "title":4},
+      {"rank":2,
+    "name":"梅西",
+      "nationality":"阿根廷",
+      "goal":94,
+      "match":115,
+      "club":"巴塞罗那",
+      "title":4},
+      {"rank":3,
+    "name":"劳尔.冈萨雷斯",
+      "nationality":"西班牙",
+      "goal":71,
+      "match":142,
+      "club":"皇家马德里",
+      "title":3},
+      {"rank":4,
+    "name":"范尼斯特鲁伊",
+      "nationality":"荷兰",
+      "goal":56,
+      "match":73,
+      "club":"曼联/皇马",
+      "title":0},
+      {"rank":5,
+    "name":"亨利",
+      "nationality":"法国",
+      "goal":50,
+      "match":112,
+      "club":"阿森纳/巴萨",
+      "title":2}
   ]
 deleteLast(){
   this.users.pop()
 }
 saveNewUser(){
   this.users.push({
-     "index":666,
-      "name":"New User",
-      "sex":"Male",
-      "name_en":"new_user",
-      "github":"new_user",
-      "exam1":76,
-      "exam2":76,
-      "exam3":76
+      "rank":6,
+    "name":"New User",
+      "nationality":"中国",
+      "goal":50,
+      "match":100,
+      "club":"AC米兰",
+      "title":1
   })
 }
   sortByAsccending(){
     // 参考MDN Array操作的API文档 Array相关方法方法
     this.users.sort(function (a,b) {
-      if (a.index > b.index){
+      if (a.rank > b.rank){
         return 1;
       } 
 
-      if (a.index < b.index){
+      if (a.rank < b.rank){
         return -1;
       }  
       return 0;  
@@ -66,11 +76,11 @@ saveNewUser(){
     // 参考MDN Array操作的API文档 Array相关方法
     // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
     this.users.sort(function (a,b) {
-      if(a.index < b.index) {
+      if(a.rank < b.rank) {
         return 1;
       }
 
-      if (a.index > b.index) {
+      if (a.rank > b.rank) {
         return -1;
       }
       return 0;
