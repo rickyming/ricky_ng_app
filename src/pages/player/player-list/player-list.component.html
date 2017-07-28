@@ -1,0 +1,34 @@
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="name">姓名</option>
+        <option value="nationality">国籍</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="search()">搜索</button>
+
+</div>
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>
+<button routerLink="/player/edit/new">新增</button>
+</div>
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-1" (click)="sortByAsccending('id')">排名 </div>
+      <div class="col-2" (click)="sortByAsccending('name')">姓名 </div>
+      <div class="col-1" (click)="sortByAsccending('nationality')">国籍 </div>
+      <div class="col-2" (click)="sortByAsccending('match')">出场数 </div>
+      <div class="col-1" (click)="sortByDesccending('goal')">进球数 </div>
+      <div class="col-1" (click)="sortByDesccending('club')">俱乐部 </div>
+      <div class="col-1" (click)="sortByDesccending('title')">冠军数 </div>
+      <div class="col-2">操作 </div>
+
+<div class="row table-row" *ngFor="let player of searchResult">
+  <app-player-item [player]="player" (playerClick)="selectplayer = $event"></app-player-item>
+</div>
+<div class="row table-row" *ngFor="let player of players">
+  <app-player-item [player]="player" (playerClick)="selectplayer = $event"></app-player-item>
+</div>

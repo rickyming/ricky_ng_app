@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Ng Lazyload Starter';
+  title = 'Cloud Admin';
+  now = new Date();
 }

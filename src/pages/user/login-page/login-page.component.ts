@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
+import { PlayerService } from '../../player/player.service'
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',

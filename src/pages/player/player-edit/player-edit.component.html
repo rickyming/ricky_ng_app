@@ -1,0 +1,27 @@
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.playerId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+姓名：
+<input type="text" [(ngModel)]="player.name"/>
+</div>
+
+<div>
+国籍：
+<input type="text" [(ngModel)]="player.nationality"/>
+</div>
+
+<div>
+出场数：
+<input type="text" [(ngModel)]="player.match"/>
+</div>
+
+<div>
+进球数：
+<input type="text" [(ngModel)]="player.goal"/>
+</div>
+
+<button routerLink="/player" (click)="save()">提交</button>
