@@ -26,7 +26,9 @@ export class PlayerEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
+    if(this.isNew){
     this.playerServ.players.push(this.player)
+    }
     this.location.back();
   }
   ngOnInit() {
