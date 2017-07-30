@@ -13,7 +13,7 @@ export class PlayerItemComponent implements OnInit {
   @Output() playerClick = new EventEmitter<any>();
   constructor(private playerServ:PlayerService) { 
   }
-  onplayerClick(){
+  onPlayerClick(){
     this.playerClick.emit(this.player)
   }
   check(){
@@ -25,14 +25,6 @@ export class PlayerItemComponent implements OnInit {
     }else{
       return false
     }
-  }
-  delete(){
-    let id = this.player.id
-    this.playerServ.players.forEach((item,index,array)=>{
-      if(item.id == id){
-        array.splice(index,1)
-      }
-    })
   }
   ngOnInit() {
   }

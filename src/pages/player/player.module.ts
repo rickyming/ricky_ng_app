@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -21,13 +22,14 @@ import { PlayerService } from './player.service'
      // Import Official Shared Module
     CommonModule,
     FormsModule,
+    MaterialModule,
     // Import Custom Shared Module
     PipesModule,
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
       { path: '', component: PlayerListComponent, pathMatch: 'full' },
-      { path: 'player/edit/:sid', component: PlayerEditComponent, pathMatch: 'full' }
+      { path: 'player/edit/:id', component: PlayerEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

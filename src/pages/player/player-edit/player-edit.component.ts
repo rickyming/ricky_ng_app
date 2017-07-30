@@ -26,42 +26,33 @@ export class PlayerEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
-    if(this.isNew){
-    this.playerServ.players.push(this.player)
-    }
-    this.location.back();
+    this.player.match = Number(this.player.match)
+    this.player.goal  = Number(this.player.goal)
+    this.player.title = Number(this.player.title)
+    this.playerServ.savePlayer(this.player).subscribe(data=>{
+      console.log(data)
+      this.location.back();
+      alert("保存成功。");
+    })
   }
   ngOnInit() {
-    this.getPlayerSubscribe = this.route.params.subscribe(params=>{
-      this.getPlayer(params['sid']).then(player=>{
-      console.log(player)
-      this.playerId = player.id;
-      this.player = player
-    }).catch(err=>{
-      console.log(err)
-    })
+        this.route.params.subscribe(params=>{
+          let id = params['id']
+          if(id=="new"){
+            let player = {name:""}
+            this.isNew = true;
+            this.player = player
+          }else{
+            this.playerServ.getPlayerById(id).subscribe(player=>{
+            console.log(player)
+            // this.playerId = player.objectId;
+            this.player = player
+        })
+      }
+
     })
   }
   ngOnDestroy(){
-    this.getPlayerSubscribe.unsubscribe();
   }
-
-  getPlayer(id: any): Promise<any> {
-    
-    let p = new Promise((resolve,reject)=>{
-      if(id=="new"){
-        let player = {name:""}
-        this.isNew = true;
-        resolve(player)
-      }
-      let player = this.playerServ.players.find(item=>item.id == id)
-      if(player){
-        resolve(player)
-      }else{
-        reject("player not found")
-      }
-    })
-    return p
-}
 
 }
